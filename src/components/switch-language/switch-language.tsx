@@ -1,32 +1,22 @@
-import { useCallback, useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import {useCallback, useContext} from 'react'
 
 // styled components
 import * as Elements from './elements'
+import LanguageContext from "../../context/language";
 
 const LANGUAGES_ITEMS = ['en', 'ua']
 
 export function SwitchLanguage() {
-  const [lang, setLang] = useState('ua')
-  const { i18n } = useTranslation()
-
-  useEffect(() => {
-    toggle(lang)
-  }, [])
-
-  const toggle = useCallback((lang: string) => {
-    i18n.changeLanguage(lang)
-    setLang(lang)
-  }, [])
+  const { language, toggleLanguage } = useContext(LanguageContext)
 
   const renderItem = useCallback((item) => {
     return <Elements.Item
-      className={`${lang === item ? 'active' : ''}`}
-      onClick={() => toggle(item)}
+      className={`${language === item ? 'active' : ''}`}
+      onClick={() => toggleLanguage(item)}
     >
       {item}
     </Elements.Item>
-  }, [lang])
+  }, [language])
 
   return <Elements.Container>
     {LANGUAGES_ITEMS.map(renderItem)}

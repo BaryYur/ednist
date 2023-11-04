@@ -1,11 +1,11 @@
 import {
   BrowserRouter,
-  Switch,
   Route,
+  Routes
 } from 'react-router-dom'
 
 // pages
-import { Home, SingleProject, Projects } from 'pages'
+import { Home, SingleProject, Projects, NotFound } from 'pages'
 
 // components
 import { ContactUs, Footer, Navigation } from 'components'
@@ -18,17 +18,12 @@ export function Router() {
     <BrowserRouter>
       <Screen>
         <Navigation />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/projects">
-            <Projects />
-          </Route>
-          <Route exact path="/projects/:id">
-            <SingleProject />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<SingleProject />} />
+          <Route path="*"  element={<NotFound />} />
+        </Routes>
         <ContactUs />
         <Footer />
       </Screen>

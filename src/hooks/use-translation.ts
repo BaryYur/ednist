@@ -1,3 +1,9 @@
+import { useContext } from 'react'
+
+import LanguageContext from '../context/language'
+
 export const useTranslation = () => {
-  return 'en'
+  const { language } = useContext(LanguageContext)
+
+  return language
 }

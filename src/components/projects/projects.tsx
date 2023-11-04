@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 // components
@@ -35,20 +35,20 @@ interface IProjectsData {
 export function Projects(props: IProps) {
   const { title, button } = props
 
-  const history = useHistory()
+  const navigate = useNavigate()
   const { projects }: IProjectsData = useProjects({ initialPage: 1, count: 6 })
   const { t } = useTranslation()
 
-  const goToProjects = useCallback(() => {
-    history.push('/projects')
-  }, [])
-
-  if (button && !button.onClick) {
-    button.onClick = goToProjects
-  }
+  // const goToProjects = useCallback(() => {
+  //   navigate('/projects')
+  // }, [])
+  //
+  // if (button && !button.onClick) {
+  //   button.onClick = goToProjects
+  // }
 
   const goToProject = useCallback((id) => {
-    history.push(`/projects/${id}`)
+    navigate(`/projects/${id}`)
   }, [])
 
   const renderItem = useCallback((item, index) => {
@@ -84,7 +84,7 @@ export function Projects(props: IProps) {
         {
           button && <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
             <Elements.ButtonContainer>
-              <SecondaryButton onClick={button.onClick}>
+              <SecondaryButton onClick={() => navigate('/projects')}>
                 {t(button.title)}
               </SecondaryButton>
             </Elements.ButtonContainer>

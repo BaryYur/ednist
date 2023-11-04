@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 // styled components
@@ -28,16 +28,19 @@ import pdf from '../../data/ENGRaysuTanıtımDosyası-2023.pdf'
 
 export function Navigation() {
   const { t } = useTranslation()
-  const history = useHistory()
+  const navigate = useNavigate()
+  const location = useLocation()
   const breakpoint = useBreakpoint()
 
   const onLogoClick = useCallback(() => {
-    if (history?.location?.pathname === '/') {
+    if (location?.pathname === '/') {
       window.location.reload()
     } else {
-      history.push('/')
+      navigate('/')
     }
-  }, [])
+
+    console.log(location)
+  }, [location])
 
   const renderItem = ({ path, title, isActive }: IRenderItemProps) => {
     const extraProps: IExtraProps = {}
@@ -58,16 +61,14 @@ export function Navigation() {
     </Elements.Item>
   }
 
-  // const logoIcon = useMemo(() => breakpoint > breakpoints.phone ? textLogo : logo, [breakpoint])
-
   return <Elements.Wrapper>
     <Container>
       <Elements.InnerContainer>
         <Elements.LogoContainer>
-          <div onClick={onLogoClick} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
-            <Elements.Logo src={logo} alt="Ednist" />
-            {breakpoint > breakpoints.phone && <div style={{ fontSize: "30px", fontWeight: 600,marginRight: "10px" }}>Ednist</div>} {/* change */}
-          </div>
+          <Elements.LogoBoxIcon onClick={onLogoClick}>
+            <Elements.Logo src={logo} alt="Yednist" />
+            {breakpoint > breakpoints.phone && <Elements.LogoText>Єдність</Elements.LogoText>}
+          </Elements.LogoBoxIcon>
           <SwitchLanguage />
         </Elements.LogoContainer>
         {

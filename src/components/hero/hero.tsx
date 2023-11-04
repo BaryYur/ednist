@@ -20,9 +20,9 @@ const SLIDER_SETTINGS = {
 
 interface IProps {
   title?: string
-  description?: string|null
+  description?: string | null
   showLearnMore?: boolean
-  fullScreen?: boolean,
+  fullScreen?: boolean
 }
 
 export const Hero = (props: IProps) => {
@@ -66,7 +66,7 @@ export const Hero = (props: IProps) => {
 }
 
 Hero.defaultProps = {
-  title: 'Global construction',
+  title: 'Єдність',
   description: `As one of the area’s highest-rated general contractors,
     we take immense pride in our work and that pride shines
     through in all of our projects. In each project we undertake,

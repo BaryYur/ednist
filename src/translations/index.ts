@@ -11,6 +11,8 @@ import CONTACT_US_EN from './contact-us/contact-us.en.json'
 import CONTACT_US_UA from './contact-us/contact-us.ua.json'
 import ABOUT_US_EN from './about-us/about-us.en.json'
 import ABOUT_US_UA from './about-us/about-us.ua.json'
+import ABOUT_US_SECTION_EN from './about-us-section/about-us-section.en.json'
+import ABOUT_US_SECTION_UA from './about-us-section/about-us-section.ua.json'
 
 export const EN = {
   ...NAVIGATION_EN,
@@ -19,6 +21,7 @@ export const EN = {
   ...OUR_PROJECTS_EN,
   ...CONTACT_US_EN,
   ...ABOUT_US_EN,
+  ...ABOUT_US_SECTION_EN
 }
 
 export const UA = {
@@ -28,4 +31,5 @@ export const UA = {
   ...OUR_PROJECTS_UA,
   ...CONTACT_US_UA,
   ...ABOUT_US_UA,
+  ...ABOUT_US_SECTION_UA
 }

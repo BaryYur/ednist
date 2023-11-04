@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "global-construction"
-  }
+    "default": "ednist-construction",
+    "ednist-construction": "ednist-construction"
+  },
+  "targets": {},
+  "etags": {}
 }

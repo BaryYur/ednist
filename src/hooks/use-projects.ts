@@ -22,10 +22,10 @@ export interface IProjectsData {
 }
 
 interface IFilterProjectsParams {
-  country?: string|null
+  country?: string | null
 }
 
-export type FilterProjectsParams = IFilterProjectsParams|null
+export type FilterProjectsParams = IFilterProjectsParams | null
 
 interface IParams {
   initialPage?: number
@@ -41,6 +41,7 @@ const formatProjects = (projects, filters: IFilterParams = []) => {
         [key]: value
       }
     }
+
     return res
   }, {})
 
@@ -65,7 +66,7 @@ export const useProjects = ({ initialPage = 1, count = 10, filters }: IParams) =
 
   useEffect(() => {
     setProjects(data.slice((initialPage - 1) * count, count))
-  }, [])
+  }, [translation])
 
   const loadMore = useCallback(({ page }) => {
     setLoading(true)

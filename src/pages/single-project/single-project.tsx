@@ -1,4 +1,8 @@
+import { useContext, useEffect, useState } from 'react'
+
 import { useParams } from "react-router-dom"
+
+import LanguageContext from '../../context/language'
 
 // common components
 import { Hero } from 'components'
@@ -11,7 +15,14 @@ import { useProject } from '../../hooks'
 
 export function SingleProject () {
   const { id } = useParams()
+  const { language } = useContext(LanguageContext)
   const project = useProject(id)
+
+  const [projectLanguage, setProjectLanguage] = useState(language)
+
+  useEffect(() => {
+    setProjectLanguage(language)
+  }, [language]);
 
   return (
     <>
@@ -19,7 +30,7 @@ export function SingleProject () {
         title={project.title}
         description={null}
       />
-      <Project data={project} />
+      <Project data={project} key={projectLanguage} />
     </>
   )
 }

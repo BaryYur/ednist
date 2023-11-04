@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Slider from 'react-slick'
 
 // styled components
@@ -28,13 +28,13 @@ const SLIDER_SETTINGS = {
 }
 
 export default function Project (props: IProps) {
-  const history = useHistory()
+  const navigate = useNavigate()
   const { data: project } = props
 
   const images = Images[project.id]
 
   const goToProjectsByCountry = useCallback((country) => {
-    history.push(`/projects?country=${country}`)
+    navigate(`/projects?country=${country}`)
   }, [])
 
   const renderSliderItem = useCallback((item, index) => {

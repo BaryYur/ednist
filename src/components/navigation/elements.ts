@@ -91,3 +91,20 @@ export const DownloadCatalogBtn = styled.a<any>`
     background-color: ${({ theme }) => theme.primaryDarker};
   }
 `
+
+export const LogoBoxIcon = styled.div<any>`
+  display: flex; 
+  align-items: center; 
+  cursor: pointer;
+`
+
+export const LogoText = styled.div<any>`
+  font-size: 30px; 
+  font-weight: 600; 
+  margin-right: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+`

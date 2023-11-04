@@ -14,9 +14,9 @@ import * as Elements from './elements'
 // constants
 import {
   ADDRESS,
-  EMAIL,
-  PHONE_NUMBER,
-  FORMATTED_PHONE_NUMBER,
+  EMAILS,
+  PHONE_NUMBERS,
+  FORMATTED_PHONE_NUMBERS,
   FADE_ANIMATION_DURATION,
 } from 'constant-variables'
 
@@ -31,15 +31,13 @@ const CONTACT_INFO_ITEMS = [
   },
   {
     title: 'Phone',
-    value: FORMATTED_PHONE_NUMBER,
+    value: FORMATTED_PHONE_NUMBERS,
     icon: faPhoneAlt,
-    href: `tel:${PHONE_NUMBER}`
   },
   {
     title: 'Email',
-    value: EMAIL,
+    value: EMAILS,
     icon: faEnvelope,
-    href: `mailto:${EMAIL}`
   },
 ]
 
@@ -66,12 +64,28 @@ export function ContactUs() {
         {t(item.title)}
       </Elements.ContactInfoItemTitle>
       {
-        item.href ? <Elements.ContactInfoLink href={item.href}>
+        item.href && <Elements.ContactInfoLink href={item.href}>
           {t(item.value)}
-        </Elements.ContactInfoLink> : <Elements.ContactInfo>
+        </Elements.ContactInfoLink>
+      }
+      {!item.href && item.title !== 'Email' && item.title !== 'Phone' && <Elements.ContactInfo>
           {t(item.value)}
         </Elements.ContactInfo>
       }
+      {item.title === 'Email' && (
+        item.value.map(item => (
+          <div style={{ margin: "5px 0" }}>
+            <Elements.ContactInfoLink href={`mailto:${item}`}>{item}</Elements.ContactInfoLink>
+          </div>
+        ))
+      )}
+      {item.title === 'Phone' && (
+        item.value.map((item, index) => (
+          <div style={{ margin: "5px 0" }}>
+            <Elements.ContactInfoLink href={`tel:${PHONE_NUMBERS[index]}`}>{item}</Elements.ContactInfoLink>
+          </div>
+        ))
+      )}
     </Elements.ContactInfoItem>
   }, [])
 

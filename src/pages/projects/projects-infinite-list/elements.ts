@@ -113,7 +113,6 @@ export const FilterItem = styled.li<any>`
   position: relative;
   display: flex;
   padding: 5px 20px 5px 10px;
-  margin: 10px;
   border: 1px solid ${({ theme }) => theme.line};
   border-radius: 20px;
   font-size: 18px;
@@ -149,4 +148,53 @@ export const FilterValue = styled.span<any>`
 export const NothingFoundTitle = styled.p<any>`
   text-align: center;
   color: grey;
+`
+
+export const FilterButtonsContainer = styled.div<any>`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  
+  @media (max-width: 540px) {
+    flex-direction: column;
+  }
+`
+
+export const FilterBtns = styled.div<any>`
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  background-color: #a09c9c;
+  border-radius: 20px;
+  
+  & button {
+    padding: 8.5px;
+    width: 110px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #608dfd;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  & button.active-btn {
+    background-color: transparent;
+  }
+
+  @media (max-width: 540px) {
+    width: 100%;
+    
+    & button {
+      width: 33.3%;
+    }
+  }
+`
+
+export const LoadingText = styled.p<any>`
+  color: grey;
+  text-align: center;
+  font-size: 14px;
 `

@@ -28,7 +28,7 @@ export interface Action {
   }
 }
 
-export type Theme = 'dark'|'light'
+export type Theme = 'dark' | 'light'
 
 export interface IThemeContext {
   theme: Theme,
@@ -40,6 +40,7 @@ export interface IProject {
   country: string,
   description: string,
   category: string,
+  finished: boolean,
   images: [string],
 }
 
