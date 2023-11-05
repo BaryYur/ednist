@@ -10,8 +10,9 @@ import { useScrollBlock } from '../../../hooks/use-scroll-block'
 
 // @ts-ignore
 import pdf from '../../../data/ENGRaysuTanıtımDosyası-2023.pdf'
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowCircleDown} from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
 
 interface IBurgerProps {
   open: boolean,
@@ -64,7 +65,7 @@ const Menu = ({ open, items, setOpen }: IMenuProps) => {
     <Elements.Menu open={open}>
       {items.map(renderItem)}
       <Elements.DownloadCatalogBtn href={pdf} target="_blank">
-        <FontAwesomeIcon icon={faArrowCircleDown} />
+        <FontAwesomeIcon icon={faCloudDownloadAlt} />
         <span>{t('Partners catalog')}</span>
       </Elements.DownloadCatalogBtn>
     </Elements.Menu>

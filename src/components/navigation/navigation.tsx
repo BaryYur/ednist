@@ -38,8 +38,6 @@ export function Navigation() {
     } else {
       navigate('/')
     }
-
-    console.log(location)
   }, [location])
 
   const renderItem = ({ path, title, isActive }: IRenderItemProps) => {
