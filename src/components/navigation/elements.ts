@@ -70,14 +70,13 @@ export const Logo = styled.img<any>`
   cursor: pointer;
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 50px;
-    margin: 0 20px;
+    margin-right: 20px;
   }
 `
 
 export const DownloadCatalogBtn = styled.a<any>`
   display: flex;
   gap: 5px;
-  margin-left: 10px;
   background: transparent;
   padding: 10px 15px;
   border-radius: 30px;

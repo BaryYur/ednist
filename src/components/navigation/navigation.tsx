@@ -15,7 +15,7 @@ import { SwitchLanguage } from 'components'
 import BurgerMenu from './burger-menu/burger-menu'
 
 // hooks
-import { useBreakpoint } from 'hooks'
+import { useBreakpoint, useScrollToTop } from 'hooks'
 
 // images
 import { logo } from 'assets/images'
@@ -24,13 +24,15 @@ import { logo } from 'assets/images'
 import { NAVIGATION_ITEMS, IRenderItemProps, IExtraProps } from './data'
 
 // @ts-ignore
-import pdf from '../../data/ENGRaysuTanıtımDosyası-2023.pdf'
+import pdf from '../../data/catalog.pdf'
+import machines from '../../assets/images/common/avtopark.jpg'
 
 export function Navigation() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
   const breakpoint = useBreakpoint()
+  const { scrollToTop } = useScrollToTop()
 
   const onLogoClick = useCallback(() => {
     if (location?.pathname === '/') {
@@ -38,6 +40,8 @@ export function Navigation() {
     } else {
       navigate('/')
     }
+
+    scrollToTop()
   }, [location])
 
   const renderItem = ({ path, title, isActive }: IRenderItemProps) => {
@@ -52,6 +56,7 @@ export function Navigation() {
         exact
         to={path}
         activeClassName="active"
+        onClick={scrollToTop}
         {...extraProps}
       >
         {t(title)}
@@ -73,10 +78,16 @@ export function Navigation() {
           breakpoint > breakpoints.phone ?
             <Elements.Nav>
               {NAVIGATION_ITEMS.map(renderItem)}
-              <Elements.DownloadCatalogBtn href={pdf} target="_blank">
-                <FontAwesomeIcon icon={faCloudDownloadAlt} />
-                <span>{t('Partners catalog')}</span>
-              </Elements.DownloadCatalogBtn>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <Elements.DownloadCatalogBtn href={pdf} target="_blank">
+                  <FontAwesomeIcon icon={faCloudDownloadAlt} />
+                  <span>{t('Catalog')}</span>
+                </Elements.DownloadCatalogBtn>
+                <Elements.DownloadCatalogBtn href={machines} target="_blank">
+                  <FontAwesomeIcon icon={faCloudDownloadAlt} />
+                  <span>{t('Cars')}</span>
+                </Elements.DownloadCatalogBtn>
+              </div>
             </Elements.Nav>
             : <BurgerMenu items={NAVIGATION_ITEMS} />
         }

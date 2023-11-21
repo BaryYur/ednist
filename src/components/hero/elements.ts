@@ -61,7 +61,7 @@ export const SliderItem = styled.div<any>`
 `
 
 export const Title = styled.h1<any>`
-  font-size: 82px;
+  font-size: 68px;
   font-weight: 700;
   text-transform: uppercase;
   margin: 70px 0 10px;

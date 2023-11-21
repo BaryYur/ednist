@@ -7,7 +7,7 @@ import './index.css'
 // components
 import App from './app'
 
-import { LanguageProvider } from "./context/language";
+import { LanguageProvider } from './context/language'
 
 ReactDOM.render(
   <React.StrictMode>

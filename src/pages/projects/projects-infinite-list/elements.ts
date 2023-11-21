@@ -167,8 +167,8 @@ export const FilterBtns = styled.div<any>`
   padding: 1px;
   background-color: #a09c9c;
   border-radius: 20px;
-  
-  & button {
+
+  & button.active-btn {
     padding: 8.5px;
     width: 110px;
     border: none;
@@ -179,15 +179,35 @@ export const FilterBtns = styled.div<any>`
     border-radius: 20px;
     transition: all 0.2s ease-in-out;
   }
-  
-  & button.active-btn {
+
+  & button.active-btn:hover {
+    background-color: #608fdf;
+  }
+
+  & button {
+    padding: 8.5px;
+    width: 110px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
     background-color: transparent;
+  }
+
+  & button:hover {
+    background-color: rgba(211, 211, 211, 0.18);
   }
 
   @media (max-width: 540px) {
     width: 100%;
-    
+
     & button {
+      width: 33.3%;
+    }
+    
+    & button.active-btn {
       width: 33.3%;
     }
   }

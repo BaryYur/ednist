@@ -101,13 +101,14 @@ export const Burger = styled.button<any>`
 export const DownloadCatalogBtn = styled.a<any>`
   display: flex;
   gap: 5px;
-  margin-left: 10px;
   background: transparent;
   margin-top: 15px;
   padding: 10px 15px;
   border-radius: 30px;
   border: 1px solid ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.primary};
+  text-transform: uppercase;
+  font-size: 14px;
   transition: all 0.5s linear;
   &:hover {
     color: ${({ theme }) => theme.textLighter};

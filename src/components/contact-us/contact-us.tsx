@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faMapMarkerAlt, faPhoneAlt, faEnvelope, faUserFriends } from '@fortawesome/free-solid-svg-icons'
+// import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { useTranslation } from 'react-i18next'
 
 // components
@@ -21,7 +21,7 @@ import {
 } from 'constant-variables'
 
 // utils
-import { calcItemAnimationDuration } from 'utils'
+// import { calcItemAnimationDuration } from 'utils'
 
 const CONTACT_INFO_ITEMS = [
   {
@@ -38,19 +38,19 @@ const CONTACT_INFO_ITEMS = [
     title: 'Email',
     value: EMAILS,
     icon: faEnvelope,
-  },
+  }
 ]
 
-const SOCIAL_ITEMS = [
-  {
-    href: 'https://facebook.com',
-    icon: faFacebookF
-  },
-  {
-    href: 'https://twitter.com',
-    icon: faTwitter
-  },
-]
+// const SOCIAL_ITEMS = [
+//   {
+//     href: 'https://facebook.com',
+//     icon: faFacebookF
+//   },
+//   {
+//     href: 'https://twitter.com',
+//     icon: faTwitter
+//   },
+// ]
 
 export function ContactUs() {
   const { t } = useTranslation()
@@ -89,17 +89,17 @@ export function ContactUs() {
     </Elements.ContactInfoItem>
   }, [])
 
-  const renderSocialItem = useCallback((item, index) => {
-    return <Elements.SocialIconItem key={`social-item-${index}`}>
-      <ScrollAnimation animateOnce duration={calcItemAnimationDuration(index)} animateIn="fadeInUp">
-        <Elements.SocialItemInnerContainer>
-          <Elements.SocialIconLink target="_blank" href={item.href}>
-            <FontAwesomeIcon icon={item.icon} />
-          </Elements.SocialIconLink>
-        </Elements.SocialItemInnerContainer>
-      </ScrollAnimation>
-    </Elements.SocialIconItem>
-  }, [])
+  // const renderSocialItem = useCallback((item, index) => {
+  //   return <Elements.SocialIconItem key={`social-item-${index}`}>
+  //     <ScrollAnimation animateOnce duration={calcItemAnimationDuration(index)} animateIn="fadeInUp">
+  //       <Elements.SocialItemInnerContainer>
+  //         <Elements.SocialIconLink target="_blank" href={item.href}>
+  //           <FontAwesomeIcon icon={item.icon} />
+  //         </Elements.SocialIconLink>
+  //       </Elements.SocialItemInnerContainer>
+  //     </ScrollAnimation>
+  //   </Elements.SocialIconItem>
+  // }, [])
 
   return <Elements.Wrapper>
     <Container>
@@ -112,9 +112,20 @@ export function ContactUs() {
           </ScrollAnimation>
         </Elements.ContactInfoWrapper>
         <Elements.Line />
-        <Elements.SocialIconList>
-          {SOCIAL_ITEMS.map(renderSocialItem)}
-        </Elements.SocialIconList>
+        <ScrollAnimation animateOnce animateIn="fadeInUp">
+          <div style={{ textAlign: "center" }}>
+            <p style={{ color: "white" }}>
+              <FontAwesomeIcon icon={faUserFriends} />
+              <span style={{ marginLeft: "10px" }}>{t('Partners')}</span>
+            </p>
+            <Elements.ContactInfoLink href="https://www.raysu.com.tr" target="_blank">
+              www.raysu.com.tr
+            </Elements.ContactInfoLink >
+          </div>
+        </ScrollAnimation>
+        {/*<Elements.SocialIconList>*/}
+        {/*  {SOCIAL_ITEMS.map(renderSocialItem)}*/}
+        {/*</Elements.SocialIconList>*/}
       </Elements.InnerContainer>
     </Container>
   </Elements.Wrapper>

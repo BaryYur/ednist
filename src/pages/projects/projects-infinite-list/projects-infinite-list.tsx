@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useLocation, useSearchParams } from 'react-router-dom'
 
 import { useTranslation } from 'react-i18next'
 
@@ -14,13 +14,14 @@ import { Container } from 'theme/elements'
 import * as Elements from './elements'
 
 // hooks
-import { useProjects, useFiltersParams, IFilterResponse, IProjectsData } from 'hooks'
+import { useProjects, useFiltersParams, IFilterResponse, IProjectsData, useScrollToTop } from 'hooks'
 
 // constants
 import { FADE_ANIMATION_DURATION } from 'constant-variables'
 
 export function ProjectsInfiniteList() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { t } = useTranslation()
   const [filters, setFilters]: IFilterResponse = useFiltersParams()
 
@@ -31,6 +32,7 @@ export function ProjectsInfiniteList() {
     loading,
     hasMore
   }: IProjectsData = useProjects({ initialPage: 1, filters })
+  const { scrollToTop } = useScrollToTop()
 
   const [currentProjects, setCurrentProjects] = useState<IProject[]>([])
   const [finishingFilter, setFinishingFilter] = useSearchParams({
@@ -40,6 +42,7 @@ export function ProjectsInfiniteList() {
 
   const goToProject = useCallback((id) => {
     navigate(`/projects/${id}`)
+    scrollToTop()
   }, [])
 
   const onLoadMore = useCallback(() => {
@@ -56,12 +59,23 @@ export function ProjectsInfiniteList() {
     }))
   }, [filters])
 
+  const scrollToProjects= () => {
+    if (window.scrollY < 300) {
+      window.scrollTo({
+        top: window.scrollY + 300,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   const getCurrentProjectByState = (state: string) => {
     setFinishingFilter(prev => {
       prev.set('projectState', state)
 
       return prev
     }, { replace: true })
+
+    scrollToProjects()
   }
 
   const stateFilter = (paramProjects: any) => {
@@ -75,16 +89,22 @@ export function ProjectsInfiniteList() {
   }
 
   useEffect(() => {
-    if (filters.length !== 0) {
-      let filterProjects = projects.filter(item => item.country === filters[0].value)
+    if (finishing === 'all' || finishing === 'finished' || finishing === 'unfinished') {
+      scrollToProjects()
+    }
+  }, [location]);
 
-      setCurrentProjects(filterProjects)
-      stateFilter(filterProjects)
+  useEffect(() => {
+    if (filters.length !== 0 && location.search !== '') {
+      let filteredProjects = projects.filter(item => item.country === filters[0].value)
+
+      setCurrentProjects(filteredProjects)
+      stateFilter(filteredProjects)
     } else {
       setCurrentProjects(projects)
       stateFilter(projects)
     }
-  }, [projects, filters, finishingFilter])
+  }, [projects, filters, finishingFilter, location])
 
   const renderItem = useCallback((item, index) => {
     return <Elements.ProjectItemAnimateContainer
@@ -98,7 +118,7 @@ export function ProjectsInfiniteList() {
         bg={item?.images?.[0]}
       >
         <Elements.ProjectHoverBox>
-          <Elements.ProjectTitle>{t(item.title)}</Elements.ProjectTitle>
+          <Elements.ProjectTitle>{item.title}</Elements.ProjectTitle>
         </Elements.ProjectHoverBox>
       </Elements.ProjectItem>
     </Elements.ProjectItemAnimateContainer>
@@ -111,10 +131,10 @@ export function ProjectsInfiniteList() {
       key={`filter-item-${key}`}
     >
       <Elements.FilterKey>
-        {key}:
+        {t(`Key-${key}`)}:
       </Elements.FilterKey>
       <Elements.FilterValue>
-        {value}
+        {t(`Value-country-${value}`)}
       </Elements.FilterValue>
     </Elements.FilterItem>
   }, [filters])
@@ -130,15 +150,15 @@ export function ProjectsInfiniteList() {
           }
           <Elements.FilterBtns>
             <button
-              className={(finishing !== 'all' || finishing === null || finishing === undefined) ? 'active-btn' : ''}
+              className={(finishing === 'all' || finishing === null || finishing === undefined) ? 'active-btn' : ''}
               onClick={() => getCurrentProjectByState('all')}
             >{t('All')}</button>
             <button
-              className={finishing !== 'finished' ? 'active-btn' : ''}
+              className={finishing === 'finished' ? 'active-btn' : ''}
               onClick={() => getCurrentProjectByState('finished')}
             >{t('Finished')}</button>
             <button
-              className={finishing !== 'unfinished' ? 'active-btn' : ''}
+              className={finishing === 'unfinished' ? 'active-btn' : ''}
               onClick={() => getCurrentProjectByState('unfinished')}
             >{t('Unfinished')}</button>
           </Elements.FilterBtns>
@@ -153,7 +173,7 @@ export function ProjectsInfiniteList() {
             {currentProjects?.map(renderItem)}
           </Elements.ProjectsList>
         </InfiniteScroll>
-        {currentProjects.length === 0 && loading && <Elements.NothingFoundTitle>{t('Not found projects')}</Elements.NothingFoundTitle>}
+        {currentProjects.length === 0 && !loading && <Elements.NothingFoundTitle>{t('Not found projects')}</Elements.NothingFoundTitle>}
       </Elements.InnerContainer>
     </Container>
   </Elements.Wrapper>

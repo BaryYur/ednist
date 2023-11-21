@@ -8,8 +8,12 @@ import * as Elements from './elements'
 import { NavigationItems, IExtraProps, IRenderItemProps } from '../data'
 import { useScrollBlock } from '../../../hooks/use-scroll-block'
 
+// hooks
+import { useScrollToTop } from 'hooks'
+
 // @ts-ignore
-import pdf from '../../../data/ENGRaysuTanıtımDosyası-2023.pdf'
+import pdf from '../../../data/catalog.pdf'
+import machines from '../../../assets/images/common/avtopark.jpg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
@@ -37,6 +41,7 @@ interface IMenuProps {
 
 const Menu = ({ open, items, setOpen }: IMenuProps) => {
   const { t } = useTranslation()
+  const { scrollToTop } = useScrollToTop()
 
   const onItemClick = useCallback(() => {
     setOpen(false)
@@ -54,6 +59,7 @@ const Menu = ({ open, items, setOpen }: IMenuProps) => {
         exact
         to={path}
         activeClassName="active"
+        onClick={scrollToTop}
         {...extraProps}
       >
         {t(title)}
@@ -66,7 +72,11 @@ const Menu = ({ open, items, setOpen }: IMenuProps) => {
       {items.map(renderItem)}
       <Elements.DownloadCatalogBtn href={pdf} target="_blank">
         <FontAwesomeIcon icon={faCloudDownloadAlt} />
-        <span>{t('Partners catalog')}</span>
+        <span>{t('Catalog')}</span>
+      </Elements.DownloadCatalogBtn>
+      <Elements.DownloadCatalogBtn href={machines} target="_blank">
+        <FontAwesomeIcon icon={faCloudDownloadAlt} />
+        <span>{t('Cars')}</span>
       </Elements.DownloadCatalogBtn>
     </Elements.Menu>
   )

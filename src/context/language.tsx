@@ -10,12 +10,15 @@ interface LanguageContextType {
 const LanguageContext = React.createContext({} as LanguageContextType)
 
 export const LanguageProvider = ({ children } : { children: React.ReactNode }) => {
-  const [lang, setLang] = useState('ua')
+  const storedLanguage = localStorage.getItem('language')
+  const initialLanguage = storedLanguage ? JSON.parse(storedLanguage) : 'ua'
+  const [lang, setLang] = useState(initialLanguage)
   const { i18n } = useTranslation()
 
   useEffect(() => {
+    localStorage.setItem('language', JSON.stringify(lang))
     toggle(lang)
-  }, [])
+  }, [lang])
 
   const toggle = useCallback((lang: string) => {
     i18n.changeLanguage(lang)

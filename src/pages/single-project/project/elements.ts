@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const Container = styled.div<any>``
 
 export const InnerContainer = styled.div<any>`
@@ -26,6 +25,7 @@ export const SliderContainer = styled.div<any>`
   
   .slick-slider {
     position: absolute;
+    z-index: 1;
     top: 0;
     right: 0;
     bottom: 0;
@@ -33,11 +33,42 @@ export const SliderContainer = styled.div<any>`
     & .slick-list, .slick-track, .slick-slide, .slick-slide div {
       height: 100%;
     }
+    
+    & .slick-prev {
+    //  //left: 8px;
+      z-index: 10;
+      width: 25px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: white;
+      left: 8px;
+    }
+    
+    & .slick-next {
+      //right: 12px;
+      width: 25px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: white;
+      right: 8px;
+    }
+    
+    & .slick-prev::before,
+    & .slick-next::before {
+      color: #608dfd;
+      font-size: 37px;
+      opacity: 1;
+      
+      left: -5px;
+      top: -4px;
+      position: absolute;
+    }
   }
 
   .slick-dots {
     bottom: 10px;
   }
+  
   .slick-custom-dot {
     width: 20px;
     height: 4px;
@@ -46,6 +77,7 @@ export const SliderContainer = styled.div<any>`
     cursor: pointer;
     transition: all 0.2s ease;
   }
+  
   & .slick-active .slick-custom-dot {
     background: ${({ theme }) => theme.primary};
   }
@@ -65,7 +97,7 @@ export const InfoContainer = styled.div<any>`
     padding-left: 0;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    text-align: center;
+    //text-align: center;
   }
 `
 
@@ -75,10 +107,15 @@ export const Title = styled.h2<any>`
   font-weight: 600;
 `
 
-export const Description = styled.h2<any>`
+export const Description = styled.p<any>`
   font-size: 18px;
   color: ${({ theme }) => theme.textLight};
   font-weight: 400;
+  
+  & p {
+    margin: 5px 0;
+    line-height: 19px;
+  }
 `
 
 export const Country = styled.div<any>`

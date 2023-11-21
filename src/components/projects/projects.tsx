@@ -10,7 +10,7 @@ import { Container, SectionTitle, SecondaryButton } from 'theme/elements'
 import * as Elements from './elements'
 
 // hooks
-import { useProjects } from 'hooks'
+import { useProjects, useScrollToTop } from 'hooks'
 
 // types
 import { IProject } from 'types'
@@ -38,6 +38,7 @@ export function Projects(props: IProps) {
   const navigate = useNavigate()
   const { projects }: IProjectsData = useProjects({ initialPage: 1, count: 6 })
   const { t } = useTranslation()
+  const { scrollToTop } = useScrollToTop()
 
   // const goToProjects = useCallback(() => {
   //   navigate('/projects')
@@ -49,6 +50,7 @@ export function Projects(props: IProps) {
 
   const goToProject = useCallback((id) => {
     navigate(`/projects/${id}`)
+    scrollToTop()
   }, [])
 
   const renderItem = useCallback((item, index) => {
@@ -84,7 +86,10 @@ export function Projects(props: IProps) {
         {
           button && <ScrollAnimation animateOnce duration={FADE_ANIMATION_DURATION} animateIn="fadeInUp">
             <Elements.ButtonContainer>
-              <SecondaryButton onClick={() => navigate('/projects')}>
+              <SecondaryButton onClick={() => {
+                navigate('/projects')
+                scrollToTop()
+              }}>
                 {t(button.title)}
               </SecondaryButton>
             </Elements.ButtonContainer>

@@ -15,8 +15,6 @@ import images14 from './14'
 import images15 from './15'
 import images16 from './16'
 import images17 from './17'
-import images18 from './18'
-import images19 from './19'
 
 export default {
   1: images1,
@@ -36,6 +34,4 @@ export default {
   15: images15,
   16: images16,
   17: images17,
-  18: images18,
-  19: images19,
 }

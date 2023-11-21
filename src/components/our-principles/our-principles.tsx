@@ -17,7 +17,7 @@ import { OUR_PRINCIPLES } from './data'
 
 const SLIDER_SETTINGS = {
   dots: false,
-  arrows: false,
+  arrows: true,
   infinite: true,
   autoplay: true,
   speed: 700,
