@@ -69,9 +69,9 @@ export default function Project (props: IProps) {
 
   const renderInfo = useCallback(() => {
     return <Elements.InfoContainer>
-      <Elements.Title>{project.title}</Elements.Title>
+      <Elements.Title>{t(project.title)}</Elements.Title>
       <Elements.Description>{
-        project.description.split('\n').map((line, index) => (
+        t(`Description-${project.title}`).split('\n').map((line, index) => (
           <p key={index}>{line}</p>
         ))}
       </Elements.Description>

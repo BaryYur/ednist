@@ -8,5 +8,56 @@
   "Key-country": "Країна",
   "Value-country-Ukraine": "Україна",
   "Value-country-Turkey": "Туреччина",
-  "Loading": "Завантаження"
+  "Loading": "Завантаження",
+
+  "Kiev International-Terminal-D": "Київ Міжнародний Термінал-D",
+  "Description-Kiev International-Terminal-D": "Місто: Київ\nОб'єкт: Міжнародний аеропорт Бориспіль Термінал D\nЗагальна площа: 120.000m2\nРоки будівництва: 2008 - 2012",
+
+  "Kyiv Rivera Hotel": "Київський готель Рів'єра",
+  "Description-Kyiv Rivera Hotel": "Місто: Київ\nВулиця: Сагайдачного, 15\nОб'єкт: Готель Рів'єра\nЗагальна площа: 8500 m2\nРоки побудови: 2004-2006",
+
+  "Passage Shoping-Mall Dnipro": "ТРЦ Пасаж, Дніпро",
+  "Description-Passage Shoping-Mall Dnipro": "Місто: Дніпропетровськ\nПроспект: Карла Маркса, 50\nОб'єкт: ТРЦ Пасаж\nЗагальна площа: 40.000 m2\nРоки побудови: 2010-2012",
+
+  "Victoria Gardens Mall": "Торговий центр Victoria Gardens Mall",
+  "Description-Victoria Gardens Mall": "Місто: Львів\nВулиця: Кульпарківська, 226А\nОб'єкт: Торговий центр Victoria's Garden\nЗагальна площа: 145.000 m2\nРоки побудови: 2014-2017",
+
+  "Sky Towers": "Sky Towers",
+  "Description-Sky Towers": "Місто: Київ\nВулиця: Проспект Перемоги, 13\nОб'єкт: SkyTowers\nЗагальна площа: 220.000 m2\nРоки будівництва: 2013 - (недобудований)",
+
+  "Underground Metro": "Метрополітен",
+  "Description-Underground Metro": "Місто: Дніпро\nВулиця: Карла Маркса\nОб'єкт: Підземний метрополітен\nТахеометри: 3\nОпис: 2 тунелі, загальною довжиною 8 км\nРоки будівництва: 2017 - (недобудований)",
+
+  "Radisson Blue Hotel": "Готель Radisson Blue",
+  "Description-Radisson Blue Hotel": "Місто: Київ\nВулиця: Ярославів Вал, 22\nОб'єкт: Готель Radisson Blue\nЗагальна площа: 15.000 m2\nРоки побудови: 2012-2013",
+
+  "Radisson SportPark Inn": "Готель Radisson sport park",
+  "Description-Radisson SportPark Inn": "Місто: Київ\nВулиця: Велика Васильківська, 55\nОб'єкт: Готель Radisson sport park\nЗагальна площа: 15.000 m2\nРоки побудови: 2012-2014",
+
+  "Shulavska Business center": "Бізнес-центр Шулявська",
+  "Description-Shulavska Business center": "Місто: Київ\nВулиця: Вадима Гетьмана, 1\nОб'єкт: Житловий комплекс та бізнес-центр\nЗагальна площа: 120.000 m2\nРоки побудови: 2005-2008",
+
+  "Bilecik Söğüt Savcıbey Pond Construction": "Будівництво ставу Білечик Согут Савчибей",
+  "Description-Bilecik Söğüt Savcıbey Pond Construction": "Місто: Білечик\nАдміністрація: DSI 3. Районне управління\nЦіна договору: 969.863,13 $\nПочаток: 30.04.2015\nЗакінчення: 11.09.2016",
+
+  "Construction Works, 90Km lenght": "Будівельні роботи, 90 км дороги",
+  "Description-Construction Works, 90Km lenght": "Місто: Санліурфа\nАдміністрація: Головне управління автомобільних доріг\nЦіна контракту: 49.827.520,10$\nПочаток: 18/05/2009\nЗакінчення: 23/09/2013",
+
+  "Group Connection Roads (Project Management)": "Групові з'єднувальні дороги (управління проектами)",
+  "Description-Group Connection Roads (Project Management)": "Місто: Карамюрсель\nАдміністрація: Генеральна дирекція автомобільних доріг 1. Регіональна дирекція\nЦіна контракту: 9.321.865,99 $\nПочаток: 18.05.2001\nЗакінчення: 21.06.2007",
+
+  "Karaman Ermenek Sarıvadi Pond Construction": "Будівництво ставка Караман Ерменек Сариваді",
+  "Description-Karaman Ermenek Sarıvadi Pond Construction": "Місто: Караман\nАдміністрація: DSI 2. Районний офіс\nЦіна контракту: 1.304.970,76 $\nПочаток: 05.05.2014\nЗакінчення: 15.01.2015",
+
+  "Konya Doğanhisar İlyaslar Dam and Irrigation Construction": "Конья Доганхісар Ільяслар Дамба та іригаційне будівництво",
+  "Description-Konya Doğanhisar İlyaslar Dam and Irrigation Construction": "Місто: Конья\nАдміністрація: DSI 4. Районний офіс\nЦіна контракту: 6.953.152,99 $\nПочаток: 12.04.2013\nЗакінчення: 30.08.2015",
+
+  "Manisa Demirci Ayvaalanı Dam and Irrigation Construction": "Будівництво греблі та іригаційної системи Маніса Демірджі Айваалани",
+  "Description-Manisa Demirci Ayvaalanı Dam and Irrigation Construction": "Місто: Маніса\nАдміністрація: DSI 2. Районний офіс Бьольге \nЦіна контракту: 2.447.755,56 $ \nПочаток: 27.05.2015\nЗакінчення: 15.03.2018",
+
+  "Manisa Demirci Sayık Dam Construction": "Будівництво дамби Маніса Демірджі Сайик",
+  "Description-Manisa Demirci Sayık Dam Construction": "Місто: Маніса\nАдміністрація: DSI 2. Районний офіс\nЦіна контракту: 3.223.198,14 $\nПочаток: 14.10.2016\nЗакінчення: 15.03.2018",
+
+  "Semi-Fixed Sprinkler Irrigation System Construction": "Будівництво напівстаціонарної дощувальної системи зрошення",
+  "Description-Semi-Fixed Sprinkler Irrigation System Construction": "Місто: Урфа\nАдміністрація: Головне управління сільськогосподарських підприємств\nЦіна контракту: 6.566.658.04 $\nПочаток: 31.05.2021\nЗакінчення: 23.08.2022s"
 }

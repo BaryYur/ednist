@@ -1,9 +1,10 @@
-import { useContext } from 'react'
+// import { useContext } from 'react'
 
-import LanguageContext from '../context/language'
+// import LanguageContext from '../context/language'
 
 export const useTranslation = () => {
-  const { language } = useContext(LanguageContext)
+  // const { language } = useContext(LanguageContext)
 
-  return language
+  // return language
+  return 'en'
 }

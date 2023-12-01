@@ -8,5 +8,56 @@
   "Key-country": "Country",
   "Value-country-Ukraine": "Ukraine",
   "Value-country-Turkey": "Turkey",
-  "Loading": "Loading"
+  "Loading": "Loading",
+
+  "Kyiv International-Terminal-D": "Kiev International-Terminal-D",
+  "Description-Kiev International-Terminal-D": "City: Kiev\nObject: Borispol International Airport \"Terminal D\"\nTotal area: 120.000m2\nYears of building: 2008 - 2012",
+
+  "Kyiv Rivera Hotel": "Kyiv Rivera Hotel",
+  "Description-Kyiv Rivera Hotel": "City: Kiev\nStreet: Sagaydachnogo, 15\nObject: Rivera Hotel\nTotal area: 8500 m2\nYears of building: 2004-2006",
+
+  "Passage Shoping-Mall Dnipro": "Passage Shoping-Mall Dnipro",
+  "Description-Passage Shoping-Mall Dnipro": "City: Dnipropetrovsk\nAvenue: Karla Marksa, 50\nObject: Passage mall\nTotal area: 40.000 m2\nYears of building: 2010-2012",
+
+  "Victoria Gardens Mall": "Victoria Gardens Mall",
+  "Description-Victoria Gardens Mall": "City: Lviv\nStreet: Kul'parkivs'ka, 226A\nObject: Victoria's Garden Shopping Center\nTotal area: 145.000 m2\nYears of building: 2014-2017",
+
+  "Sky Towers": "Sky Towers",
+  "Description-Sky Towers": "City: Kiev\nStreet: Peremohy Ave, 13\nObject: SkyTowers\nTotal area: 220.000 m2\nYears of building: 2013 - (Unfinished)",
+
+  "Underground Metro": "Underground Metro",
+  "Description-Underground Metro": "City: Dnipropetrovsk\nStreet: Karla Marks\nObject: Underground metro\nTotal stations: 3\nDescription: 2 tunnels, in total 8km length\nYears of building: 2017 - (Unfinished)",
+
+  "Radisson Blue Hotel": "Radisson Blue Hotel",
+  "Description-Radisson Blue Hotel": "City: Kiev\nStreet: Yaroslaviv Val, 22\nObject: Radisson Blue Hotel\nTotal area: 15.000 m2\nYears of building: 2012-2013",
+
+  "Radisson SportPark Inn": "Radisson SportPark Inn",
+  "Description-Radisson SportPark Inn": "City: Kiev\nStreet: Velyka Vasylkivska, 55\nObject: Radisson Sport Park-Inn\nTotal area: 15.000 m2\nYears of building: 2012-2014",
+
+  "Shulavska Business center": "Shulavska Business center",
+  "Description-Shulavska Business center": "City: Kiev\nStreet: Vadima Getmana, 1\nObject: Residential-complex and Business center\nTotal area: 120.000 m2\nYears of building: 2005-2008",
+
+  "Bilecik Söğüt Savcıbey Pond Construction": "Bilecik Söğüt Savcıbey Pond Construction",
+  "Description-Bilecik Söğüt Savcıbey Pond Construction": "City: Bilecik\nAdministration: DSI 3. District Office\nContract Price: 969.863.13 $\nBeginning: 30.04.2015\nEnding: 11.09.2016",
+
+  "Construction Works, 90Km lenght": "Construction Works, 90Km lenght",
+  "Description-Construction Works, 90Km lenght": "City: Şanlıurfa\nAdministration: General Directorate of Highways\nContract Price: 49.827.520,10$\nBeginning: 18/05/2009\nEnding: 23/09/2013",
+
+  "Group Connection Roads (Project Management)": "Group Connection Roads (Project Management)",
+  "Description-Group Connection Roads (Project Management)": "City: Karamürsel\nAdministration: General Directorate of Highways 1. Regional Directorate\nContract Price: 9.321.865,99 $\nBeginning: 18.05.2001\nEnding: 21.06.2007",
+
+  "Karaman Ermenek Sarıvadi Pond Construction": "Karaman Ermenek Sarıvadi Pond Construction",
+  "Description-Karaman Ermenek Sarıvadi Pond Construction": "City: Karaman\nAdministration: DSI 2. District Office\nContract Price: 1.304.970,76 $\nBeginning: 05.05.2014\nEnding: 15.01.2015",
+
+  "Konya Doğanhisar İlyaslar Dam and Irrigation Construction": "Konya Doğanhisar İlyaslar Dam and Irrigation Construction",
+  "Description-Konya Doğanhisar İlyaslar Dam and Irrigation Construction": "City: Konya\nAdministration: DSI 4. District Office\nContract Price: 6.953.152,99 $\nBeginning: 12.04.2013\nEnding: 30.08.2015",
+
+  "Manisa Demirci Ayvaalanı Dam and Irrigation Construction": "Manisa Demirci Ayvaalanı Dam and Irrigation Construction",
+  "Description-Manisa Demirci Ayvaalanı Dam and Irrigation Construction": "City: Manisa\nAdministration: DSI 2. Bölge District Office \nContract Price: 2.447.755,56 $ \nBeginning: 27.05.2015\nEnding: 15.03.2018",
+
+  "Manisa Demirci Sayık Dam Construction": "Manisa Demirci Sayık Dam Construction",
+  "Description-Manisa Demirci Sayık Dam Construction": "City: Manisa\nAdministration: DSI 2. District Office\nContract Price: 3.223.198,14 $\nBegining: 14.10.2016\nEnding: 15.03.2018",
+
+  "Semi-Fixed Sprinkler Irrigation System Construction": "Semi-Fixed Sprinkler Irrigation System Construction",
+  "Description-Semi-Fixed Sprinkler Irrigation System Construction": "City: Urfa\nAdministration: General Directorate of Agricultural Enterprises\nContract Price: 6.566.658.04 $\nBeginning: 31.05.2021\nEnding: 23.08.2022"
 }

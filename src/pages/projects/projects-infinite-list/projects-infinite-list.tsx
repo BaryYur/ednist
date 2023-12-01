@@ -92,7 +92,7 @@ export function ProjectsInfiniteList() {
     if (finishing === 'all' || finishing === 'finished' || finishing === 'unfinished') {
       scrollToProjects()
     }
-  }, [location]);
+  }, [])
 
   useEffect(() => {
     if (filters.length !== 0 && location.search !== '') {
@@ -118,7 +118,7 @@ export function ProjectsInfiniteList() {
         bg={item?.images?.[0]}
       >
         <Elements.ProjectHoverBox>
-          <Elements.ProjectTitle>{item.title}</Elements.ProjectTitle>
+          <Elements.ProjectTitle>{t(item.title)}</Elements.ProjectTitle>
         </Elements.ProjectHoverBox>
       </Elements.ProjectItem>
     </Elements.ProjectItemAnimateContainer>

@@ -53,7 +53,8 @@ const formatProjects = (projects, filters: IFilterParams = []) => {
 
 export const useProjects = ({ initialPage = 1, count = 10, filters }: IParams) => {
   const translation = useTranslation()
-  const data = useMemo(() => formatProjects(jsonData[translation], filters), [translation])
+  // const data = useMemo(() => formatProjects(jsonData[translation], filters), [translation])
+  const data = useMemo(() => formatProjects(jsonData['en'], filters), [translation])
 
   const [currentPage, setCurrentPage] = useState<number>(initialPage)
   const [projects, setProjects] = useState<IProject[]>([])
